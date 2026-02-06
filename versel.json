@@ -14,8 +14,8 @@
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "false",
-        "APP_URL": "http://penilaian-ukt-github-io",
-        "APP_KEY": "base64:TGaVaXwhWgjn9akhE4SCSIjGG/cQqvICUQ+PgLA3Bs0=",
+        "APP_URL": "http://127.0.0.1:8000",
+        "APP_KEY": "base64:oX4Pwm/9XwQpFpp9i1I1APgUGEI0s3sf5es4WdaEOsU=",
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
         "APP_PACKAGES_CACHE": "/tmp/packages.php",

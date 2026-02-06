@@ -5,7 +5,7 @@
         "api/index.php": { "runtime": "vercel-php@0.6.0" }
     },
     "routes": [
-        { "src": "/build/(.*)", "dest": "/public/build/" },
+        { "src": "/build/(.*)", "dest": "/public/build/$1" },
         { "src": "/(.*)", "dest": "/api/index.php" }
     ],
     "public": true,
@@ -14,7 +14,7 @@
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "false",
-        "APP_URL": "http://127.0.0.1:8000",
+        "APP_URL": "${VERCEL_URL}",
         "APP_KEY": "base64:oX4Pwm/9XwQpFpp9i1I1APgUGEI0s3sf5es4WdaEOsU=",
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
@@ -29,6 +29,7 @@
         "DB_HOST": "4gg.h.filess.io",
         "DB_PORT": "3307",
         "DB_DATABASE": "db2024_stormtorn",
-        "DB_USERNAME": "db2024_stormtorn"
+        "DB_USERNAME": "db2024_stormtorn",
+        "DB_PASSWORD": "${DB_PASSWORD}"
     }
 }

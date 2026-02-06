@@ -1,0 +1,344 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@layer components {
+  .gradient-bg {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  }
+  
+  .card-white { background: linear-gradient(145deg, #f8f9fa 0%, #e9ecef 100%); }
+  .card-yellow { background: linear-gradient(145deg, #ffc107 0%, #ff9800 100%); }
+  .card-red { background: linear-gradient(145deg, #f44336 0%, #d32f2f 100%); }
+  .card-blue { background: linear-gradient(145deg, #2196f3 0%, #1565c0 100%); }
+  .card-brown { background: linear-gradient(145deg, #8d6e63 0%, #5d4037 100%); }
+  .card-black { background: linear-gradient(145deg, #424242 0%, #212121 100%); }
+  
+  .glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-br from-[#e94560] to-[#c41e3a] transition-all duration-300;
+  }
+  
+  .btn-primary:hover {
+    @apply -translate-y-[2px] shadow-lg shadow-[#e94560]/30;
+  }
+  
+  .input-field {
+    @apply bg-white/5 border border-white/10 transition-all duration-300;
+  }
+  
+  .input-field:focus {
+    @apply bg-white/10 border-[#e94560] outline-none;
+  }
+  
+  .sidebar {
+    background: linear-gradient(180deg, #1a1a2e 0%, #0f0f1a 100%);
+  }
+  
+  .menu-item {
+    @apply transition-all duration-300;
+  }
+  
+  .menu-item:hover, .menu-item.active {
+    @apply bg-[#e94560]/20 border-l-[3px] border-[#e94560];
+  }
+  
+  .table-row:hover {
+    @apply bg-white/5;
+  }
+  
+  .modal-overlay {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease;
+  }
+  
+  .tingkatan-badge {
+    @apply px-3 py-1 rounded-full text-xs font-semibold;
+  }
+  
+  .badge-putih { @apply bg-gray-100 text-gray-800; }
+  .badge-kuning { @apply bg-yellow-400 text-gray-800; }
+  .badge-merah { @apply bg-red-600 text-white; }
+  .badge-biru { @apply bg-blue-500 text-white; }
+  .badge-coklat { @apply bg-[#8d6e63] text-white; }
+  .badge-hitam { @apply bg-gray-900 text-white; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media print {
+  .no-print { display: none !important; }
+  .print-only { display: block !important; }
+  body { background: white !important; -webkit-print-color-adjust: exact; }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(233, 69, 96, 0.5);
+  border-radius: 4px;
+}
+
+/* ================================
+   RESPONSIVE DESIGN UTILITIES
+   ================================ */
+
+/* Container with responsive max-width */
+.responsive-container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .responsive-container {
+    max-width: 640px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .responsive-container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-container {
+    max-width: 1024px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .responsive-container {
+    max-width: 1200px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .responsive-container {
+    max-width: 1400px;
+  }
+}
+
+/* Fluid Typography */
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1536px) {
+  html {
+    font-size: 17px;
+  }
+}
+
+/* Responsive Spacing */
+.responsive-padding {
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .responsive-padding {
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-padding {
+    padding: 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .responsive-padding {
+    padding: 2.5rem;
+  }
+}
+
+/* Responsive Grid for Cards */
+.responsive-grid-stats {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 480px) {
+  .responsive-grid-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .responsive-grid-stats {
+    gap: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-grid-stats {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .responsive-grid-stats {
+    gap: 2rem;
+  }
+}
+
+/* Responsive Grid for Tingkatan Cards */
+.responsive-grid-tingkatan {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 640px) {
+  .responsive-grid-tingkatan {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-grid-tingkatan {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .responsive-grid-tingkatan {
+    gap: 1.5rem;
+  }
+}
+
+/* Responsive Sidebar Width */
+@media (min-width: 1536px) {
+  .sidebar {
+    width: 280px;
+  }
+}
+
+/* Responsive Table */
+.responsive-table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.responsive-table {
+  width: 100%;
+  min-width: 600px;
+}
+
+@media (min-width: 1024px) {
+  .responsive-table {
+    min-width: auto;
+  }
+}
+
+/* Responsive Text Sizes */
+.text-responsive-xs { font-size: 0.65rem; }
+.text-responsive-sm { font-size: 0.75rem; }
+.text-responsive-base { font-size: 0.875rem; }
+.text-responsive-lg { font-size: 1rem; }
+.text-responsive-xl { font-size: 1.125rem; }
+.text-responsive-2xl { font-size: 1.25rem; }
+
+@media (min-width: 768px) {
+  .text-responsive-xs { font-size: 0.75rem; }
+  .text-responsive-sm { font-size: 0.8rem; }
+  .text-responsive-base { font-size: 1rem; }
+  .text-responsive-lg { font-size: 1.125rem; }
+  .text-responsive-xl { font-size: 1.25rem; }
+  .text-responsive-2xl { font-size: 1.5rem; }
+}
+
+@media (min-width: 1280px) {
+  .text-responsive-xs { font-size: 0.8rem; }
+  .text-responsive-sm { font-size: 0.875rem; }
+  .text-responsive-base { font-size: 1rem; }
+  .text-responsive-lg { font-size: 1.25rem; }
+  .text-responsive-xl { font-size: 1.5rem; }
+  .text-responsive-2xl { font-size: 1.75rem; }
+}
+
+/* Adaptive Card Sizing */
+.glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+@media (min-width: 1024px) {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* Hover Effects - Desktop Only */
+@media (hover: hover) and (pointer: fine) {
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  }
+  
+  .table-row:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .menu-item {
+    padding-top: 0.875rem;
+    padding-bottom: 0.875rem;
+  }
+  
+  .btn-primary {
+    min-height: 44px;
+  }
+}
